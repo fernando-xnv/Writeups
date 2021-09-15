@@ -13,7 +13,7 @@ PORT   STATE SERVICE VERSION
 |_http-server-header: Apache/2.4.18 (Ubuntu)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-
+<hr>
 Verificando arquivos ou pastas com o WFUZZ
 wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.231.150/FUZZ -t 100
 
