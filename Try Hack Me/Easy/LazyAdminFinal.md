@@ -35,10 +35,6 @@ ID           Response   Lines    Word       Chars       Payload
 ```
 
 ```
-teste2 
-```
-
-```
 ┌──(xnv㉿kali)-[~]
 └─$ wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/content/FUZZ -t 100
 =====================================================================
