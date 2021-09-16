@@ -39,7 +39,19 @@ teste2
 ```
 
 ```
-teste2 
+┌──(xnv㉿kali)-[~]
+└─$ wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/content/FUZZ -t 100
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload 
+=====================================================================
+000000001:   200        35 L     151 W      2198 Ch     "http://10.10.49.240/content/"
+000000478:   301        9 L      28 W       317 Ch      "as"
+000000505:   301        9 L      28 W       325 Ch      "attachment"
+000000089:   301        9 L      28 W       322 Ch      "_themes"
+000001991:   301        9 L      28 W       321 Ch      "images"
+000002010:   301        9 L      28 W       318 Ch      "inc"
+000002021:   200        35 L     151 W      2198 Ch     "index.php"
+000002179:   301        9 L      28 W       317 Ch      "js"
 ```
 
 ```
