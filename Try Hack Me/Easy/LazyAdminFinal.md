@@ -1,3 +1,7 @@
+Segue Writeup da maquina Lazy Admin Final do Try Hack Me
+
+
+Enumeração das portas com o NMAP 
 
 ```
 ┌──(xnv㉿kali)-[~]
@@ -22,6 +26,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 38.82 seconds
 ```
 
+<b>Eumeração de arquivos e pastas com o WFUZZ
 ```
 ┌──(xnv㉿kali)-[~]
 └─$ wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/FUZZ -t 100
@@ -38,7 +43,7 @@ ID           Response   Lines    Word       Chars       Payload
 ┌──(xnv㉿kali)-[~]
 └─$ wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/content/FUZZ -t 100
 =====================================================================
-ID           Response   Lines    Word       Chars       Payload 
+ID           Response   Lines    Word       Chars       Payload
 =====================================================================
 000000001:   200        35 L     151 W      2198 Ch     "http://10.10.49.240/content/"
 000000478:   301        9 L      28 W       317 Ch      "as"
@@ -51,7 +56,10 @@ ID           Response   Lines    Word       Chars       Payload
 ```
 
 ```
-teste2 
+http://10.10.49.240/content/inc/mysql_backup/
+
+mysql_bakup_20191129023059-1.5.1.sql	2019-11-29 12:30 	4.7K
+"admin\\";s:7:\\"manager\\";s:6:\\"passwd\\";s:32:\\"42f749ade7f9e195bf475f37a44cafcb\\"
 ```
 
 ```
