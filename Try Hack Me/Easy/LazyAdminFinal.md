@@ -27,7 +27,7 @@ Nmap done: 1 IP address (1 host up) scanned in 38.82 seconds
 └─$ wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/FUZZ -t 100
 
 =====================================================================
-ID           Response   Lines    Word       Chars       Payload                                                                                                                                                                     
+ID           Response   Lines    Word       Chars       Payload
 =====================================================================
 000000001:   200        375 L    968 W      11321 Ch    "http://10.10.49.240/"
 000001027:   301        9 L      28 W       314 Ch      "content"
