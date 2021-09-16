@@ -54,10 +54,11 @@ ID           Response   Lines    Word       Chars       Payload
 000002021:   200        35 L     151 W      2198 Ch     "index.php"
 000002179:   301        9 L      28 W       317 Ch      "js"
 ```
-Após verificar todas as pastas e arquivos encontrado, e
-```
-http://10.10.49.240/content/inc/mysql_backup/
+Após verificar as pastas e arquivos encontrados, encontrei um arquivo sql 
+  
+![Capturar](https://user-images.githubusercontent.com/90646635/133702386-4aca21e1-f88d-4a3b-b77b-eceedbc6dd0b.PNG)
 
+```
 mysql_bakup_20191129023059-1.5.1.sql	2019-11-29 12:30 	4.7K
 "admin\\";s:7:\\"manager\\";s:6:\\"passwd\\";s:32:\\"42f749ade7f9e195bf475f37a44cafcb\\"
 ```
