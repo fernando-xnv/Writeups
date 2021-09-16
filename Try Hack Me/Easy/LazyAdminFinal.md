@@ -1,7 +1,7 @@
-Segue Writeup da maquina Lazy Admin Final do Try Hack Me
+<b>Segue Writeup da maquina Lazy Admin Final do Try Hack Me
 
 
-Enumeração das portas com o NMAP 
+<b>Enumeração das portas com o NMAP 
 
 ```
 ┌──(xnv㉿kali)-[~]
@@ -38,7 +38,7 @@ ID           Response   Lines    Word       Chars       Payload
 000001027:   301        9 L      28 W       314 Ch      "content"
 000002020:   200        375 L    968 W      11321 Ch    "index.html"
 ```
-
+<b>Após encontrar a pasta "content", fiz uma nova enumeração das pastas colocando o content
 ```
 ┌──(xnv㉿kali)-[~]
 └─$ wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/content/FUZZ -t 100
@@ -54,7 +54,7 @@ ID           Response   Lines    Word       Chars       Payload
 000002021:   200        35 L     151 W      2198 Ch     "index.php"
 000002179:   301        9 L      28 W       317 Ch      "js"
 ```
-
+Após verificar todas as pastas e arquivos encontrado, e
 ```
 http://10.10.49.240/content/inc/mysql_backup/
 
