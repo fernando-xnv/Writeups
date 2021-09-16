@@ -1,9 +1,8 @@
 
 ```
-nmap -A 10.10.49.240 -Pn
-```
+┌──(xnv㉿kali)-[~]
+└─$ nmap -A 10.10.49.240
 
-```
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-16 04:08 EDT
 Nmap scan report for lazyadmin.com (10.10.240.121)
 Host is up (0.26s latency).
@@ -24,16 +23,15 @@ Nmap done: 1 IP address (1 host up) scanned in 38.82 seconds
 ```
 
 ```
-wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/FUZZ -t 100 
-```
+┌──(xnv㉿kali)-[~]
+└─$ wfuzz -c -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -u http://10.10.49.240/FUZZ -t 100
 
-```
 =====================================================================
 ID           Response   Lines    Word       Chars       Payload                                                                                                                                                                     
 =====================================================================
 
-000000001:   200        375 L    968 W      11321 Ch    "http://10.10.49.240/"                                                                                                                                                      
-000001027:   301        9 L      28 W       314 Ch      "content"                                                                                                                                                                   
+000000001:   200        375 L    968 W      11321 Ch    "http://10.10.49.240/"
+000001027:   301        9 L      28 W       314 Ch      "content"                                                 
 000002020:   200        375 L    968 W      11321 Ch    "index.html" 
 ```
 
