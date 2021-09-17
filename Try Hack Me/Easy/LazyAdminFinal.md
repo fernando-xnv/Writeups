@@ -68,12 +68,13 @@ ID           Response   Lines    Word       Chars       Payload
 
 ```
 ![2](https://user-images.githubusercontent.com/90646635/133703615-493a9493-20bf-421b-9af9-090b59e23e94.PNG)
-
+```
+  
+<b>Logado vi que se tratava de uma aplicação chamada SweetRice com a versão 1.5.1, com essas informações fui caçar no "https://www.exploit-db.com/"
   
 ```
-  teste
-```
-teste2 
+![3](https://user-images.githubusercontent.com/90646635/133704110-9ba96cc1-a21c-47aa-99b5-0d4be571cb21.PNG)
+
 ```
 
 ```
