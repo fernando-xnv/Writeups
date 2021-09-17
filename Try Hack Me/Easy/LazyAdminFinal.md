@@ -54,7 +54,7 @@ ID           Response   Lines    Word       Chars       Payload
 000002021:   200        35 L     151 W      2198 Ch     "index.php"
 000002179:   301        9 L      28 W       317 Ch      "js"
 ```
-<b>Depois de verificar as pastas e arquivos encontrados, encontrei um arquivo .sql 
+<b>Depois de verificar as pastas e arquivos listados, encontrei um arquivo .sql 
   
 ![Capturar](https://user-images.githubusercontent.com/90646635/133702386-4aca21e1-f88d-4a3b-b77b-eceedbc6dd0b.PNG)
 
@@ -64,12 +64,14 @@ ID           Response   Lines    Word       Chars       Payload
 "admin\\";s:7:\\"manager\\";s:6:\\"passwd\\";s:32:\\"42f749ade7f9e195bf475f37a44cafcb\\"
 ```
 
-<b>Para quebrar esse hash usei o "https://crackstation.net/"
+<b>Para quebrar esse hash usei o "https://crackstation.net/", com o usuário e senha é só acessar a aplicação no url.
 
-  ```
-teste2 
 ```
+![2](https://user-images.githubusercontent.com/90646635/133703615-493a9493-20bf-421b-9af9-090b59e23e94.PNG)
 
+  
+```
+  teste
 ```
 teste2 
 ```
