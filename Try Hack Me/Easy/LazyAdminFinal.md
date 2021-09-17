@@ -1,6 +1,6 @@
-<b>Segue Writeup da maquina Lazy Admin Final do Try Hack Me
+<h1><b>Segue Writeup da maquina Lazy Admin Final do Try Hack Me</h1>
 
-
+<br><br>
 <b>Enumeração das portas com o NMAP 
   
 ```
