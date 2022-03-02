@@ -21,12 +21,13 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 [21][ftp] host: 10.10.252.69   login: chris   password: *******
 ```
 
+```
 ┌──(xnv㉿xnv)-[~/thm/agent-sudo]
 └─$ unzip _cutie.png.extracted 
 
-'''
+
 cutie.png.extract
-'''
+```
 
 ```
 ┌──(xnv㉿xnv)-[~/thm/agent-sudo]
