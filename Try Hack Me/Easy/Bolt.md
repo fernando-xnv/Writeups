@@ -130,8 +130,10 @@ Jake (Admin)
 ┌──(xnv㉿kali)-[~]
 └─$ wfuzz -c -w  /usr/share/dirbuster/wordlists/directory-list-2.3-small.txt --hc 404 -u http://10.10.201.199:8000/FUZZ
 
-000000027:   200        147 L    328 W      5547 Ch     "search"                                                                                                                                                                    
-000000174:   200        128 L    301 W      4990 Ch     "pages"                                                                                                                                                                     
+000000027:   200        147 L    328 W      5547 Ch     "search"
+                        
+000000174:   200        128 L    301 W      4990 Ch     "pages"
+
 000003270:   200        173 L    452 W      6660 Ch     "entries"
 ```
 
