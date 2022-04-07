@@ -30,7 +30,9 @@ PORT     STATE SERVICE VERSION
 |   256 9b:d1:65:07:51:08:00:61:98:de:95:ed:3a:e3:81:1c (ECDSA)
 |_  256 12:65:1b:61:cf:4d:e5:75:fe:f4:e8:d4:6e:10:2a:f6 (ED25519)
 Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
-_______________________________________________________________________________________________________
+```
+
+```
 FFUF /
 index.html              [Status: 200, Size: 11321, Words: 3503, Lines: 376]
 robots.txt              [Status: 200, Size: 929, Words: 176, Lines: 33]
