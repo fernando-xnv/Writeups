@@ -1,5 +1,6 @@
 # Anonforce
 
+* ### Scan de portas - Verificando quais portas estão abertas.
 ```Bash
 rustscan -a 10.10.137.35
 ```
@@ -7,13 +8,13 @@ rustscan -a 10.10.137.35
 
 ![image](https://github.com/lufffe/Writeups/assets/90646635/f087c7a5-e1bf-4fb6-8b03-456f6de445da)
 
-
+* ### Verificando o que está rodando nas portas encontradas.
 ```Bash
 nmap -A -p 21,22 10.10.137.35
 ```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/5481b171-505b-4098-a9b5-232cb3ae6a6b)
 
-
+* ### Acessando FTP e listando todos os arquivos e pastas.
 ```Bash
 ftp 10.10.137.35
 ```
