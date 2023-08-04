@@ -22,7 +22,7 @@ nmap -A -p 22,80,5044,5601 10.10.0.81
 https://github.com/LandGrey/CVE-2019-7609
 
 ```bash
-git clone <https://github.com/LandGrey/CVE-2019-7609.git
+git clone https://github.com/LandGrey/CVE-2019-7609.git
 ```
 
 ```bash
