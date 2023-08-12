@@ -70,6 +70,7 @@ Server username: cth
 cat /home/cth/user.txt
 ```
 
+* ### Escalando Previlégio.
 ```Bash
 find / -type f -user cth -exec ls {} + 2>/dev/null
 ```
@@ -80,7 +81,7 @@ cat /var/log/bash.log
 ```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/4a4c4fbc-2d87-4437-8d83-018e993dfb45)
 
-* ### Escalando Previlégio.
+
 ```
 sudo -l
 ```
