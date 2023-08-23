@@ -68,20 +68,22 @@ ssh alex@10.10.124.91
 ```
 * ### Flag Usuário
 ```bash
-alex@ubuntu:~$ cat user.txt
+cat user.txt
 ```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/98114ca8-09aa-47a3-9aca-b3f1d9d69ba1)
 
 ```bash
-alex@ubuntu:~$ sudo -l
+sudo -l
 ```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/2203909b-308f-46ff-84db-765fba1273d8)
 
 ```bash
-alex@ubuntu:~$ ls -la /etc/mp3backups/backup.sh
+ls -la /etc/mp3backups/backup.sh
 ```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/cc27a0cf-8429-4953-a2fa-4aa15d3aaf60)
 
 * ### Flag Root
-alex@ubuntu:~$ sudo /etc/mp3backups/backup.sh -c "cat /root/root.txt"
+```bash
+sudo /etc/mp3backups/backup.sh -c "cat /root/root.txt"
+```
 ![image](https://github.com/lufffe/Writeups/assets/90646635/90ccc2af-68aa-4c27-8bb6-8198be3e2b57)
