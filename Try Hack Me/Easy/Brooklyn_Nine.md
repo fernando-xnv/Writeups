@@ -12,7 +12,7 @@ rustscan -a 10.10.248.74
 ```Bash
 nmap -A -p 21,22,80 10.10.248.74
 ```
-![image](https://github.com/lufffe/Writeups/assets/90646635/3cc8a295-f6df-4b2b-805a-75f68d505379)
+![Captura de tela 2023-08-24 105130](https://github.com/lufffe/Writeups/assets/90646635/66271f17-b385-4e73-b3aa-dce319a3dfd3)
 
 * ### Verificando o FTP e baixando o arquivo que estava lá.
 ```Bash
