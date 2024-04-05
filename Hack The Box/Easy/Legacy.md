@@ -1,4 +1,4 @@
-# ****10.10.10.4 - Legacy****
+# ****Legacy****
 
 ```bash
 rustscan -a 10.10.10.4
